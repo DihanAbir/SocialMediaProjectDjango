@@ -62,18 +62,18 @@
     <div class="container">
         
         
-        <a class="navbar-brand mynav" href="{% url 'home' %}">Star Social</a>
+        <a class="navbar-brand mynav" href="{% url 'home' %}">Social Hub</a>
 
         <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
             <li><a href="#" class="btn btn-simple">Post</a></li>
             <li><a href="#" class="btn btn-simple">Groups</a></li>
             <li><a href="#" class="btn btn-simple">Create Group</a></li>
-            <li><a href="#" class="btn btn-simple">Log out</a></li>
+            <li><a  class="btn btn-simple" href="{% url 'accounts:logout' %}">Log out</a></li>
             {% else %}
             <li><a href="#" class="btn btn-simple">Groups</a></li>
-            <li><a href="#" class="btn btn-simple">Log in</a></li>
-            <li><a href="#" class="btn btn-simple">Sign up</a></li>
+            <li><a  class="btn btn-simple" href="{% url 'accounts:login' %}">Log in</a></li>
+            <li><a  class="btn btn-simple" href="{% url 'accounts:signup' %}">Sign up</a></li>
             {% endif %}
         </ul>
 
