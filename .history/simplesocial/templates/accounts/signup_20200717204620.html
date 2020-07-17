@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Sign Up {% endblock title %}
+{% load static %}
+{% block content %}
+{% if registered %}
+<div class="alert alert-success">
+    You are successfully registered <p><a href="{% url 'accounts:login'%}">Login here </p>
+</div>
+{% else %}
+
+
+
+
+<h2> Register </h2>
+<div class="jumbotron jumbotron-fluid">
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            {{form|crispy}}
+            <input type="submit" value="Register">
+        </form>
+
+        <p>Already have an account ? <a href="{% url 'accounts:login'%}">Login here </a></p>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
