@@ -2,9 +2,14 @@
 {% load static %}
 <html>
   <head>
-    <title>Start Social</title>
+    <title>Social Hub</title>
     <!-- Latest compiled and minified CSS -->
-    <link
+    <link rel="shortcut icon" href="https://di.phncdn.com/www-static/favicon.ico?cache=2020071602" />
+    <link rel="alternate" type="application/rss+xml" title="PornHub - RSS Feed" href="/rss" />
+
+    <link rel="stylesheet" href="https://di.phncdn.com/www-static/css/generated-header.css?cache=2020071602"
+        type="text/css" />
+   <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -33,7 +38,7 @@
 
     {# Custom CSS#}
     <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
-
+    
     {# Fonts#}
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One"
@@ -42,9 +47,21 @@
   </head>
 
   <body class="loader">
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+      
+      
 <nav class="navbar  techfont" role="navigation" id="navbar">
+    
+        <img src="{% static 'images/logo.png' %}" alt="" style="height: 300px; width: 100%">
+    
+    
     <div class="container">
-
+        
+        
         <a class="navbar-brand mynav" href="{% url 'home' %}">Star Social</a>
 
         <ul class="nav navbar-nav navbar-right">
