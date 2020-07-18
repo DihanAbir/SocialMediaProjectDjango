@@ -12,10 +12,13 @@ class Post(models.Model):
     message = models.TextField()
     message_html = models.TextField(editable=False)
     group = models.ForeignKey(
-        Group, related_name="group", null=True, blank=True, on_delete=models.CASCADE)
+        # this related name is very important
+        # this post will be called from the group
+        # as group.posts
+        Group, related_name="posts", null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
-        self.message
+        return self.message
 
     def save(self, *args, **kwargs):
         self.message_html = misaka.html(self.message)

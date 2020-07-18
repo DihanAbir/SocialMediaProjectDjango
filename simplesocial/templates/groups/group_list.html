@@ -7,8 +7,11 @@
       {{group.name}} <small> [ {{group.members.count}} ]</small>
     </h2>
   </a>
-
-  {% endfor %}
+  {% if user in group.members.all %}
+  <a href="#"><button class="btn btn-danger techfont">Leave Group</button> </a>
+  {% else %}
+  <a href="#"><button class="btn btn-danger techfont">Join Group</button> </a>
+  {% endif %} {% endfor %}
 </div>
 
 {% endblock %}
