@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  {% for group in object_list %}
+
+  <h2
+    class="display-4 techfont"
+    href="{% url 'groups:detail' slug=group.slug %}"
+  >
+    {{group.name}}
+  </h2>
+
+  {% endfor %}
+</div>
+
+{% endblock %}

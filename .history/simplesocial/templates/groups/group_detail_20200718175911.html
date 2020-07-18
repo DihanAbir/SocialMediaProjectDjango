@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  <h1 class="display-4 techfont">{{group.name}}</h1>
+  <hr />
+  <p class="techfont">{{group.description}}</p>
+
+  <div class="container">
+    {% if group.posts.count == 0 %}
+    <h2 class="display-4 techfont">No posts in this group yet!</h2>
+    {% else %} {% for post in group.posts.all %} {% include "posts/_post.html"
+    %} {% endfor %} {% endif %}
+  </div>
+</div>
+
+{% endblock %}

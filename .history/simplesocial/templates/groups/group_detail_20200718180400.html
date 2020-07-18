@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  <h1 class="display-4 techfont">{{group.name}}</h1>
+  <hr />
+  <p class="techfont">{{group.description}}</p>
+
+  <center class="btn btn-lg">Comments</center>
+
+  <ul>
+    {% for post in group.posts.all %}
+    <li>{{post.message}}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}

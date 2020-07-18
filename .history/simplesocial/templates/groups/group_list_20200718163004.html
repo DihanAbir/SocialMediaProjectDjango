@@ -1,0 +1,7 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  {% for group in object_list %} {{group}} {% endfor %}
+</div>
+
+{% endblock %}

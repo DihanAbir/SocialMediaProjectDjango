@@ -1,0 +1,7 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  {% if user.is_authenticated %} {{ request.user }} {% endif %}
+</div>
+
+{% endblock %}

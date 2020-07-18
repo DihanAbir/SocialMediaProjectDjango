@@ -1,0 +1,8 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  {% if user.is_authenticated %} {{user}} {% for group in object_list %}
+  {{group}} {% endfor %}
+</div>
+
+{% endblock %}
