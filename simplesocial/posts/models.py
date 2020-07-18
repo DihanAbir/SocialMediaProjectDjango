@@ -21,7 +21,7 @@ class Post(models.Model):
         self.message_html = misaka.html(self.message)
         super().save(*args, **kwargs)
 
-    # AFTER SPOSTING THIS MODEL
+    # AFTER SUccessfully POSTING THIS MODEL
     # WHERE THE LINK GOES
 
     def get_absolute_url(self):

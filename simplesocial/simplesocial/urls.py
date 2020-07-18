@@ -6,7 +6,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls', namespace='accounts')),
-    path('', views.HomePage.as_view(), name="home"),
+    path('groups/', include('groups.urls', namespace="groups")),
+    path('', views.HomePage, name="home"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

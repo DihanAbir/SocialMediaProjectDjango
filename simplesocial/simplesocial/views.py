@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView
+from django.shortcuts import redirect
 
 
-class HomePage(TemplateView):
-    template_name = "index.html"
+def HomePage(request):
+    return redirect('groups:list_group')

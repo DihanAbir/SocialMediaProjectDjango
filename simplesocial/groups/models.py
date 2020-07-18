@@ -68,7 +68,7 @@ class Group(models.Model):
         ordering = ['name']
 
     def get_absolute_url(self):
-        return reverse('groups:single', kwargs={'slug': self.slug})
+        return reverse('groups:detail', kwargs={'slug': self.slug})
 
 
 class GroupMembers(models.Model):

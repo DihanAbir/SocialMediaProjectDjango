@@ -66,12 +66,14 @@
 
         <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
+            <li class="btn btn-danger btn-lg">Welcome @{{request.user}}</li>
             <li><a href="#" class="btn btn-simple">Post</a></li>
-            <li><a href="#" class="btn btn-simple">Groups</a></li>
-            <li><a href="#" class="btn btn-simple">Create Group</a></li>
+            <li><a href="{% url 'groups:list_group' %}" class="btn btn-simple">Groups</a></li>
+            <li><a href="{% url 'groups:create_group'%}" class="btn btn-simple">Create Group</a></li>
             <li><a  class="btn btn-simple" href="{% url 'accounts:logout' %}">Log out</a></li>
+            
             {% else %}
-            <li><a href="#" class="btn btn-simple">Groups</a></li>
+            <li><a href="{% url 'groups:list_group' %}" class="btn btn-simple">Groups</a></li>
             <li><a  class="btn btn-simple" href="{% url 'accounts:login' %}">Log in</a></li>
             <li><a  class="btn btn-simple" href="{% url 'accounts:signup' %}">Sign up</a></li>
             {% endif %}
