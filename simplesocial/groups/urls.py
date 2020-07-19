@@ -22,6 +22,8 @@ urlpatterns = [
     path("", views.ListGroup.as_view(), name='list_group'),
     path("new", views.CreateGroup.as_view(), name="create_group"),
     path("detail/<slug:slug>", views.DetailGrop.as_view(), name='detail'),
+    path("join/<slug:slug>", views.join_group, name='join'),
+    path("leave/<slug:slug>", views.leave_group, name='leave'),
 
 
 ]

@@ -67,7 +67,9 @@
         <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
             <li class="btn btn-danger btn-lg">Welcome @{{request.user}}</li>
-            <li><a href="#" class="btn btn-simple">Post</a></li>
+            <li><a href="{% url 'posts:create_post' %}" class="btn btn-simple"> Create Post</a></li>
+            <li><a href="{% url 'posts:get_post_of_user' %}" class="btn btn-simple"> Your Posts</a></li>
+
             <li><a href="{% url 'groups:list_group' %}" class="btn btn-simple">Groups</a></li>
             <li><a href="{% url 'groups:create_group'%}" class="btn btn-simple">Create Group</a></li>
             <li><a  class="btn btn-simple" href="{% url 'accounts:logout' %}">Log out</a></li>

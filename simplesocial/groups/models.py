@@ -26,6 +26,10 @@ register = template.Library()
 
 class Group(models.Model):
     name = models.CharField(max_length=100, unique=True)
+
+    # every time we have to use the primary key
+    # insted we are going to use the slug
+    # this is the new style
     slug = models.SlugField(allow_unicode=True, unique=True)
     description = models.TextField(blank=True, default='')
     description_html = models.TextField(editable=False, default='', blank=True)

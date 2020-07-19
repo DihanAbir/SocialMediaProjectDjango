@@ -28,7 +28,7 @@ class Post(models.Model):
     # WHERE THE LINK GOES
 
     def get_absolute_url(self):
-        return reverse("posts:single", kwargs={"username": self.user.username, 'pk': self.pk})
+        return reverse("groups:list_group")
 
     class Meta:
         ordering = ['-created_at']

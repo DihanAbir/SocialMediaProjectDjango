@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(
+    user = models.ForeignKey(
         User, related_name='user_profile', on_delete=models.CASCADE)
 
     def __str__(self):
