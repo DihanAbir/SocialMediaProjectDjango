@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block title %} Login
+{% endblock title %} {% load static %} {% block content %}
+
+<h2>Create Post</h2>
+<div class="jumbotron jumbotron-fluid">
+  <div class="form-group">
+    <form method="POST">
+      {% csrf_token %} {{form|crispy}}
+      <input type="submit" class="btn btn-warning btn-lg" value="Create Post" />
+    </form>
+  </div>
+</div>
+{% endblock %}

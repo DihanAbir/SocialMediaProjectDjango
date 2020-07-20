@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  {% for post in posts %}
+  <center>
+    <button class="btn btn-danger">All Posts of @{{post.user}}</button>
+  </center>
+
+  <a href="#">
+    <h2 class="display-4 techfont">
+      {{post.message}}
+    </h2>
+  </a>
+  {% endfor %}
+</div>
+
+{% endblock %}
